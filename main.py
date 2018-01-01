@@ -29,7 +29,7 @@ def main():
         if timeline[i][j] == 1:
           continue
       committer.setDate(current_day)
-      for idx in range(1):
+      for idx in range(105):
         committer.gitAdd()
         committer.gitCommit()
       print(committer.gitPush(

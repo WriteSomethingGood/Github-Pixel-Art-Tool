@@ -12,23 +12,30 @@ def main():
     '/home/gardusi/github/credentials.json'
   )
   with Committer() as committer:
-    current_day = datetime.date(2018, 7, 14)
-    timeline = convertMessage(message = 'DE')
-    for week in timeline:
-      for weekday in week:
-        current_day += datetime.timedelta(days = 1)
-        if weekday != 1:
+    i = 0
+    j = -1
+    flag = False
+    current_day = datetime.date(2017, 12, 31)
+    timeline = convertMessage(message = 'HIRE ME! DEV 4FUN')
+    while True:
+      current_day += datetime.timedelta(days = 1)
+      if current_day > datetime.date(2018, 12, 31):
+        break
+      if current_day >= datetime.date(2018, 1, 28):
+        j += 1
+        if j == len(timeline[i]):
+          j = 0
+          i += 1
+        if timeline[i][j] == 1:
           continue
-        if current_day > datetime.date(2018, 8, 18):
-          continue
-        committer.setDate(current_day)
-        for idx in range(40):
-          committer.gitAdd()
-          committer.gitCommit()
-        print(committer.gitPush(
-          username = githubCredentials['username'],
-          password = githubCredentials['password'],
-          repositoryLink = 'github.com/WriteSomethingGood/Github-Pixel-Art-Tool'
-        ))
+      committer.setDate(current_day)
+      for idx in range(1):
+        committer.gitAdd()
+        committer.gitCommit()
+      print(committer.gitPush(
+        username = githubCredentials['username'],
+        password = githubCredentials['password'],
+        repositoryLink = 'github.com/WriteSomethingGood/Github-Pixel-Art-Tool'
+      ))
 
 main()

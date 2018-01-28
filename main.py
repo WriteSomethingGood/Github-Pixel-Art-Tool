@@ -19,7 +19,7 @@ def main():
         current_day += datetime.timedelta(days = 1)
         if weekday != 1:
           continue
-        if current_day != datetime.date(2018, 2, 11):
+        if current_day == datetime.date(2018, 2, 11):
           continue
         committer.setDate(current_day)
         for idx in range(1):

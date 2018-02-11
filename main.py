@@ -28,7 +28,7 @@ def main():
     print(committer.gitPush(
       username = githubCredentials['username'],
       password = githubCredentials['password'],
-      repositoryLink = 'https://github.com/WriteSomethingGood/Github-Pixel-Art-Tool'
+      repositoryLink = 'github.com/WriteSomethingGood/Github-Pixel-Art-Tool'
     ))
 
 main()

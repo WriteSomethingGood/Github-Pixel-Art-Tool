@@ -20,13 +20,13 @@ def main():
         if weekday != 1:
           continue
         committer.setDate(current_day)
-        for idx in range(92 - 28):
+        for idx in range(1):
           committer.gitAdd()
           committer.gitCommit()
     print(committer.gitPush(
       username = githubCredentials['username'],
       password = githubCredentials['password'],
-      repositoryLink = 'github.com/WriteSomethingGood/Github-Pixel-Art-Tool'
+      repositoryLink = 'https://github.com/developer4fun/Github-Pixel-Art-Tool'
     ))
 
 main()

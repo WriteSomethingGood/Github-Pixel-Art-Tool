@@ -9,20 +9,18 @@ def read_json(filepath):
 
 def main():
   githubCredentials = read_json(
-    '/home/pediogo/Github-Pixel-Art-Tool/credentials.json'
+    '/home/gardusi/github/credentials.json'
   )
   with Committer() as committer:
-
-    current_day = datetime.date(2018, 9, 10)
-    timeline = convertMessage(message = '-')
-
+    current_day = datetime.date(2018, 3, 10)
+    timeline = convertMessage(message = 'RE')
     for week in timeline:
       for weekday in week:
         current_day += datetime.timedelta(days = 1)
         if weekday != 1:
           continue
         committer.setDate(current_day)
-        for idx in range(20):
+        for idx in range(92 - 28):
           committer.gitAdd()
           committer.gitCommit()
     print(committer.gitPush(

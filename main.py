@@ -19,10 +19,10 @@ def main():
         current_day += datetime.timedelta(days = 1)
         if weekday != 1:
           continue
-        if current_day >= datetime.date(2018, 3, 21):
+        if current_day != datetime.date(2018, 3, 21):
           continue
         committer.setDate(current_day)
-        for idx in range(94 - 30):
+        for idx in range(94 - 70):
           committer.gitAdd()
           committer.gitCommit()
     print(committer.gitPush(

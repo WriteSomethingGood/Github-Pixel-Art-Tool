@@ -13,7 +13,7 @@ def main():
   )
   with Committer() as committer:
     current_day = datetime.date(2018, 7, 14)
-    timeline = convertMessage(message = 'DEV 4FU')
+    timeline = convertMessage(message = 'DEV 4FUN')
     for week in timeline:
       for weekday in week:
         current_day += datetime.timedelta(days = 1)
@@ -23,10 +23,10 @@ def main():
         for idx in range(20):
           committer.gitAdd()
           committer.gitCommit()
-    print(committer.gitPush(
-      username = githubCredentials['username'],
-      password = githubCredentials['password'],
-      repositoryLink = 'github.com/WriteSomethingGood/Github-Pixel-Art-Tool'
-    ))
+        print(committer.gitPush(
+          username = githubCredentials['username'],
+          password = githubCredentials['password'],
+          repositoryLink = 'github.com/WriteSomethingGood/Github-Pixel-Art-Tool'
+        ))
 
 main()

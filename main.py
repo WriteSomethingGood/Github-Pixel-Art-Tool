@@ -13,14 +13,14 @@ def main():
   )
   with Committer() as committer:
     current_day = datetime.date(2018, 7, 14)
-    timeline = convertMessage(message = 'DEV 4FUN')
+    timeline = convertMessage(message = 'DEV 4FU')
     for week in timeline:
       for weekday in week:
         current_day += datetime.timedelta(days = 1)
         if weekday != 1:
           continue
         committer.setDate(current_day)
-        for idx in range(10):
+        for idx in range(20):
           committer.gitAdd()
           committer.gitCommit()
     print(committer.gitPush(

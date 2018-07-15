@@ -20,7 +20,7 @@ def main():
         if weekday != 1:
           continue
         committer.setDate(current_day)
-        for idx in range(50):
+        for idx in range(10):
           committer.gitAdd()
           committer.gitCommit()
     print(committer.gitPush(

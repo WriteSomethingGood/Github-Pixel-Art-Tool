@@ -12,15 +12,15 @@ def main():
     '/home/gardusi/github/credentials.json'
   )
   with Committer() as committer:
-    current_day = datetime.date(2018, 6, 23)
-    timeline = convertMessage(message = '!')
+    current_day = datetime.date(2018, 7, 21)
+    timeline = convertMessage(message = 'DEV 4FUN')
     for week in timeline:
       for weekday in week:
         current_day += datetime.timedelta(days = 1)
         if weekday != 1:
           continue
         committer.setDate(current_day)
-        for idx in range(100):
+        for idx in range(1):
           committer.gitAdd()
           committer.gitCommit()
     print(committer.gitPush(

@@ -13,7 +13,7 @@ def main():
   )
   with Committer() as committer:
 
-    current_day = datetime.date(2018, 7, 2)
+    current_day = datetime.date(2018, 9, 8)
     timeline = convertMessage(message = '-')
 
     for week in timeline:
@@ -22,7 +22,7 @@ def main():
         if weekday != 1:
           continue
         committer.setDate(current_day)
-        for idx in range(17):
+        for idx in range(30):
           committer.gitAdd()
           committer.gitCommit()
     print(committer.gitPush(

@@ -13,7 +13,7 @@ def main():
   )
   with Committer() as committer:
 
-    current_day = datetime.date(2018, 9, 8)
+    current_day = datetime.date(2018, 9, 9)
     timeline = convertMessage(message = '-')
 
     for week in timeline:

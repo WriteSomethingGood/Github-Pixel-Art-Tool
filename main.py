@@ -13,8 +13,8 @@ def main():
   )
   with Committer() as committer:
 
-    current_day = datetime.date(2018, 6, 30)
-    timeline = convertMessage(message = 'HIR')
+    current_day = datetime.date(2018, 10, 6)
+    timeline = convertMessage(message = 'ME')
 
     for week in timeline:
       for weekday in week:
